@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-title"><h2>Submit Surplus Food</h2><p>Admin verifies safety, expiry, pickup window, donor identity and location before matching.</p></div>
+<div class="form-card wide"><form method="POST" class="grid-form">
+<label>Food name<input type="text" name="food_name" required></label>
+<label>Donor type<select name="donor_type" required>{% for t in donor_types %}<option value="{{ t }}">{{ t|replace('_',' ')|title }}</option>{% endfor %}</select></label>
+<label>Quantity meals<input type="number" name="quantity_meals" min="1" required></label>
+<label>Area<input type="text" name="area" value="{{ auth_user.area }}" required></label>
+<label class="full-line">Pickup address<input type="text" name="pickup_address" required></label>
+<label>Pickup start<input type="datetime-local" name="pickup_window_start" required></label>
+<label>Pickup end<input type="datetime-local" name="pickup_window_end" required></label>
+<label>Expiry time<input type="datetime-local" name="expire_at" required></label>
+<label>Storage note<input type="text" name="storage_note" placeholder="Warm, sealed, refrigerated, etc."></label>
+<label class="full-line">Description<textarea name="description" rows="4"></textarea></label>
+<button class="btn" type="submit">Submit Donation</button></form></div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="tag">Surplus food redistribution network</p>
+        <h1>Match surplus food with NGOs, orphanages, and verified volunteers.</h1>
+        <p>ChariSmart connects restaurants, wedding halls, and households with recipient organizations using expiry-aware matching, admin verification, and delivery tracking.</p>
+        <div class="hero-actions"><a class="btn" href="{{ url_for('register') }}">Join Network</a><a class="btn ghost" href="{{ url_for('login') }}">Login</a></div>
+    </div>
+    <div class="impact-card"><span>{{ delivered }}</span><p>Completed deliveries</p><small>System tracks approved, matched, assigned, picked-up and delivered food.</small></div>
+</section>
+<h2>Approved Food Availability</h2>
+<div class="cards-grid">
+{% for d in donations %}
+  <div class="card"><span class="status {{ d.status }}">{{ d.status|title }}</span><h3>{{ d.food_name }}</h3><p>{{ d.quantity_meals }} meals • {{ d.area }}</p><p>Expiry: {{ d.expire_at|datetime_format }}</p></div>
+{% else %}<div class="empty">No active approved donations yet.</div>{% endfor %}
+</div>
+{% endblock %}

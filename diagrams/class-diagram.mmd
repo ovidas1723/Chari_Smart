@@ -1,0 +1,67 @@
+classDiagram
+  class User {
+    +Integer id
+    +String name
+    +String email
+    +String password_hash
+    +String role
+    +String area
+    +String phone
+    +String organization_type
+    +Integer capacity_meals
+    +Boolean verified
+    +Boolean is_blocked
+    +DateTime created_at
+  }
+  class Donation {
+    +Integer id
+    +String food_name
+    +String donor_type
+    +Integer quantity_meals
+    +String area
+    +String pickup_address
+    +DateTime pickup_window_start
+    +DateTime pickup_window_end
+    +DateTime expire_at
+    +String status
+    +Integer donor_id
+  }
+  class FoodRequest {
+    +Integer id
+    +String beneficiary_group
+    +String requested_food_type
+    +Integer quantity_needed
+    +String area
+    +String delivery_address
+    +DateTime needed_before
+    +String priority
+    +String status
+    +Integer recipient_id
+  }
+  class FoodMatch {
+    +Integer id
+    +Integer donation_id
+    +Integer request_id
+    +Integer volunteer_id
+    +Integer meals_allocated
+    +Integer match_score
+    +String status
+    +DateTime pickup_confirmed_at
+    +DateTime delivered_at
+    +Integer recipient_rating
+  }
+  class Notification {
+    +Integer id
+    +String receiver_email
+    +String title
+    +Text message
+    +DateTime created_at
+  }
+
+  User "1" --> "0..*" Donation : posts
+  User "1" --> "0..*" FoodRequest : submits
+  User "0..1" --> "0..*" FoodMatch : assigned volunteer
+  Donation "1" --> "0..*" FoodMatch : included in
+  FoodRequest "1" --> "0..*" FoodMatch : fulfilled by
+  User ..> Notification : receives by email
+

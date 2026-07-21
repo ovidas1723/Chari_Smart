@@ -1,0 +1,43 @@
+erDiagram
+  USER ||--o{ DONATION : posts
+  USER ||--o{ FOOD_REQUEST : submits
+  DONATION ||--o{ FOOD_MATCH : matched_by
+  FOOD_REQUEST ||--o{ FOOD_MATCH : matched_to
+  USER ||--o{ FOOD_MATCH : assigned_as_volunteer
+  USER {
+    int id PK
+    string name
+    string email
+    string role
+    string area
+    string organization_type
+    int capacity_meals
+    boolean verified
+  }
+  DONATION {
+    int id PK
+    string food_name
+    string donor_type
+    int quantity_meals
+    datetime pickup_window_start
+    datetime pickup_window_end
+    datetime expire_at
+    string status
+  }
+  FOOD_REQUEST {
+    int id PK
+    string beneficiary_group
+    int quantity_needed
+    string area
+    datetime needed_before
+    string status
+  }
+  FOOD_MATCH {
+    int id PK
+    int donation_id FK
+    int request_id FK
+    int volunteer_id FK
+    int meals_allocated
+    int match_score
+    string status
+  }

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1600" viewBox="0 0 2200 1600">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L12,6 L0,12 z" fill="#244b3e"/></marker>
+    <style>
+      .title{font:700 40px Arial,sans-serif;fill:#12372a}.subtitle{font:600 19px Arial,sans-serif;fill:#4b635b}.entity{fill:#fff;stroke:#275f4d;stroke-width:3}.entityName{font:700 24px Arial,sans-serif;fill:#17372d}.process{fill:#dff2e9;stroke:#176b55;stroke-width:3}.processNo{font:700 22px Arial,sans-serif;fill:#176b55}.processName{font:700 22px Arial,sans-serif;fill:#17372d}.store{fill:#fff9e9;stroke:#8a6b1f;stroke-width:3}.storeLine{stroke:#8a6b1f;stroke-width:3}.storeName{font:700 21px Arial,sans-serif;fill:#4e3d12}.flow{stroke:#244b3e;stroke-width:3;fill:none;marker-end:url(#arrow)}.bi{stroke:#244b3e;stroke-width:3;fill:none;marker-start:url(#arrow);marker-end:url(#arrow)}.flowLabel{font:600 17px Arial,sans-serif;fill:#17372d}.labelBg{fill:#f4faf7;stroke:#cbded6;stroke-width:1.5}.legend{font:17px Arial,sans-serif;fill:#4b635b}
+    </style>
+  </defs>
+  <rect width="2200" height="1600" fill="#eef7f3"/>
+  <text x="1100" y="50" text-anchor="middle" class="title">ChariSmart Level-1 DFD</text>
+  <text x="1100" y="82" text-anchor="middle" class="subtitle">Balanced decomposition of access, donation, request, matching, delivery and notification functions</text>
+
+  <!-- External entities -->
+  <rect x="40" y="450" width="300" height="120" rx="14" class="entity"/><text x="190" y="520" text-anchor="middle" class="entityName">Donor</text>
+  <rect x="1860" y="450" width="300" height="120" rx="14" class="entity"/><text x="2010" y="520" text-anchor="middle" class="entityName">Recipient / NGO</text>
+  <rect x="950" y="100" width="300" height="100" rx="14" class="entity"/><text x="1100" y="160" text-anchor="middle" class="entityName">Admin</text>
+  <rect x="1860" y="1060" width="300" height="120" rx="14" class="entity"/><text x="2010" y="1130" text-anchor="middle" class="entityName">Volunteer / Rider</text>
+
+  <!-- Processes -->
+  <rect x="850" y="270" width="500" height="120" rx="42" class="process"/>
+  <text x="1100" y="312" text-anchor="middle" class="processNo">1.0</text><text x="1100" y="352" text-anchor="middle" class="processName">Manage Users and Access</text>
+
+  <rect x="400" y="450" width="360" height="120" rx="42" class="process"/>
+  <text x="580" y="492" text-anchor="middle" class="processNo">2.0</text><text x="580" y="532" text-anchor="middle" class="processName">Manage Donations</text>
+
+  <rect x="1440" y="450" width="360" height="120" rx="42" class="process"/>
+  <text x="1620" y="492" text-anchor="middle" class="processNo">3.0</text><text x="1620" y="532" text-anchor="middle" class="processName">Manage Food Requests</text>
+
+  <rect x="850" y="780" width="500" height="140" rx="46" class="process"/>
+  <text x="1100" y="825" text-anchor="middle" class="processNo">4.0</text><text x="1100" y="865" text-anchor="middle" class="processName">Verify, Match and Assign</text><text x="1100" y="895" text-anchor="middle" class="processName">Approved Submissions</text>
+
+  <rect x="1380" y="1070" width="420" height="130" rx="44" class="process"/>
+  <text x="1590" y="1115" text-anchor="middle" class="processNo">5.0</text><text x="1590" y="1157" text-anchor="middle" class="processName">Track Delivery and Notify</text>
+
+  <!-- Data stores -->
+  <g><rect x="950" y="500" width="300" height="90" class="store"/><line x1="980" y1="500" x2="980" y2="590" class="storeLine"/><text x="1110" y="555" text-anchor="middle" class="storeName">D1 Users</text></g>
+  <g><rect x="400" y="670" width="360" height="90" class="store"/><line x1="430" y1="670" x2="430" y2="760" class="storeLine"/><text x="590" y="725" text-anchor="middle" class="storeName">D2 Donations</text></g>
+  <g><rect x="1440" y="670" width="360" height="90" class="store"/><line x1="1470" y1="670" x2="1470" y2="760" class="storeLine"/><text x="1630" y="725" text-anchor="middle" class="storeName">D3 Food Requests</text></g>
+  <g><rect x="950" y="1010" width="300" height="90" class="store"/><line x1="980" y1="1010" x2="980" y2="1100" class="storeLine"/><text x="1110" y="1065" text-anchor="middle" class="storeName">D4 Food Matches</text></g>
+  <g><rect x="1380" y="1335" width="420" height="90" class="store"/><line x1="1410" y1="1335" x2="1410" y2="1425" class="storeLine"/><text x="1600" y="1390" text-anchor="middle" class="storeName">D5 Notifications</text></g>
+
+  <!-- Donor input lanes -->
+  <path d="M190 450 V330 H850" class="flow"/>
+  <rect x="390" y="292" width="190" height="38" rx="8" class="labelBg"/><text x="485" y="318" text-anchor="middle" class="flowLabel">Registration and login</text>
+  <path d="M340 510 H400" class="flow"/>
+  <rect x="218" y="578" width="210" height="58" rx="8" class="labelBg"/><text x="323" y="602" text-anchor="middle" class="flowLabel">Food, quantity, expiry</text><text x="323" y="625" text-anchor="middle" class="flowLabel">and pickup details</text>
+
+  <!-- Recipient input lanes -->
+  <path d="M2010 450 V330 H1350" class="flow"/>
+  <rect x="1615" y="292" width="190" height="38" rx="8" class="labelBg"/><text x="1710" y="318" text-anchor="middle" class="flowLabel">Registration and login</text>
+  <path d="M1860 510 H1800" class="flow"/>
+  <rect x="1810" y="370" width="230" height="58" rx="8" class="labelBg"/><text x="1925" y="394" text-anchor="middle" class="flowLabel">Beneficiary, quantity</text><text x="1925" y="417" text-anchor="middle" class="flowLabel">and delivery details</text>
+
+  <!-- Process to primary data stores -->
+  <path d="M1050 390 V500" class="flow"/><path d="M1170 500 V390" class="flow"/>
+  <rect x="1190" y="410" width="175" height="58" rx="8" class="labelBg"/><text x="1277" y="434" text-anchor="middle" class="flowLabel">User record and</text><text x="1277" y="457" text-anchor="middle" class="flowLabel">access status</text>
+
+  <path d="M520 570 V670" class="flow"/><path d="M650 670 V570" class="flow"/>
+  <rect x="650" y="595" width="180" height="58" rx="8" class="labelBg"/><text x="740" y="619" text-anchor="middle" class="flowLabel">Donation record</text><text x="740" y="642" text-anchor="middle" class="flowLabel">and current status</text>
+
+  <path d="M1560 570 V670" class="flow"/><path d="M1690 670 V570" class="flow"/>
+  <rect x="1695" y="595" width="180" height="58" rx="8" class="labelBg"/><text x="1785" y="619" text-anchor="middle" class="flowLabel">Request record</text><text x="1785" y="642" text-anchor="middle" class="flowLabel">and current status</text>
+
+  <!-- Admin lanes kept outside other nodes -->
+  <path d="M950 150 H800 V850 H850" class="flow"/>
+  <rect x="600" y="205" width="210" height="58" rx="8" class="labelBg"/><text x="705" y="229" text-anchor="middle" class="flowLabel">Approval decisions</text><text x="705" y="252" text-anchor="middle" class="flowLabel">and volunteer choice</text>
+
+  <path d="M1350 805 H1830 V220 H1250" class="flow"/>
+  <rect x="1535" y="205" width="240" height="58" rx="8" class="labelBg"/><text x="1655" y="229" text-anchor="middle" class="flowLabel">Pending submissions, match</text><text x="1655" y="252" text-anchor="middle" class="flowLabel">scores and delivery data</text>
+
+  <!-- Data stores feeding verification/matching -->
+  <path d="M1100 590 V780" class="flow"/>
+  <rect x="1115" y="660" width="150" height="38" rx="8" class="labelBg"/><text x="1190" y="686" text-anchor="middle" class="flowLabel">Verified users</text>
+
+  <path d="M760 715 H805 V825 H850" class="bi"/>
+  <rect x="455" y="805" width="205" height="58" rx="8" class="labelBg"/><text x="557" y="829" text-anchor="middle" class="flowLabel">Donation review data</text><text x="557" y="852" text-anchor="middle" class="flowLabel">and status update</text>
+
+  <path d="M1440 715 H1395 V875 H1350" class="bi"/>
+  <rect x="1390" y="790" width="185" height="58" rx="8" class="labelBg"/><text x="1482" y="814" text-anchor="middle" class="flowLabel">Request review data</text><text x="1482" y="837" text-anchor="middle" class="flowLabel">and status update</text>
+
+  <!-- Match and assignment -->
+  <path d="M1100 920 V1010" class="flow"/>
+  <rect x="855" y="940" width="225" height="58" rx="8" class="labelBg"/><text x="967" y="964" text-anchor="middle" class="flowLabel">Match, allocation and</text><text x="967" y="987" text-anchor="middle" class="flowLabel">assignment record</text>
+
+  <path d="M1350 875 H1590 V1070" class="flow"/>
+  <rect x="1380" y="905" width="190" height="38" rx="8" class="labelBg"/><text x="1475" y="931" text-anchor="middle" class="flowLabel">Delivery assignment data</text>
+
+  <!-- Volunteer lanes -->
+  <path d="M1860 1100 H1800" class="flow"/>
+  <rect x="1810" y="1010" width="205" height="58" rx="8" class="labelBg"/><text x="1912" y="1034" text-anchor="middle" class="flowLabel">Pickup and delivery</text><text x="1912" y="1057" text-anchor="middle" class="flowLabel">updates</text>
+
+  <path d="M1800 1160 H1860" class="flow"/>
+  <rect x="1830" y="1195" width="180" height="38" rx="8" class="labelBg"/><text x="1920" y="1221" text-anchor="middle" class="flowLabel">Delivery assignment</text>
+
+  <!-- Delivery and notification stores -->
+  <path d="M1380 1145 H1285 V1055 H1250" class="bi"/>
+  <rect x="1250" y="1110" width="170" height="58" rx="8" class="labelBg"/><text x="1335" y="1134" text-anchor="middle" class="flowLabel">Pickup/delivery</text><text x="1335" y="1157" text-anchor="middle" class="flowLabel">record and status</text>
+
+  <path d="M1590 1200 V1335" class="flow"/>
+  <rect x="1610" y="1240" width="165" height="58" rx="8" class="labelBg"/><text x="1692" y="1264" text-anchor="middle" class="flowLabel">Email/SMS/in-app</text><text x="1692" y="1287" text-anchor="middle" class="flowLabel">notification record</text>
+
+  <!-- Balanced outputs to donor and recipient; routed in dedicated outer lanes -->
+  <path d="M1380 1175 H300 V570" class="flow"/>
+  <rect x="500" y="1138" width="260" height="38" rx="8" class="labelBg"/><text x="630" y="1164" text-anchor="middle" class="flowLabel">Donation status and notifications</text>
+
+  <path d="M1700 1070 V900 H2050 V570" class="flow"/>
+  <rect x="1805" y="865" width="245" height="58" rx="8" class="labelBg"/><text x="1927" y="889" text-anchor="middle" class="flowLabel">Match, delivery status</text><text x="1927" y="912" text-anchor="middle" class="flowLabel">and notifications</text>
+
+  <text x="1100" y="1555" text-anchor="middle" class="legend">Rectangle = external entity | Rounded process = transformation | Open rectangle = data store | Named arrow = data flow</text>
+</svg>

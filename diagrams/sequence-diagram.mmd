@@ -1,0 +1,16 @@
+sequenceDiagram
+  participant D as Donor
+  participant S as ChariSmart
+  participant A as Admin
+  participant R as NGO/Orphanage
+  participant V as Volunteer
+  D->>S: Submit food donation
+  R->>S: Submit food request
+  A->>S: Approve donation and request
+  S->>S: Calculate match score
+  A->>S: Assign volunteer
+  S->>V: Send pickup/delivery assignment
+  V->>S: Mark picked up
+  V->>S: Mark delivered
+  R->>S: Confirm delivery and rating
+  S->>D: Notify completion

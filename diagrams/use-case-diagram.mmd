@@ -1,0 +1,35 @@
+flowchart LR
+  Donor[Donor]
+  Recipient[NGO / Orphanage]
+  Admin[Admin]
+  Volunteer[Volunteer / Rider]
+
+  subgraph System[ChariSmart System]
+    UC1([Register and log in])
+    UC2([Submit food donation])
+    UC3([Submit food request])
+    UC4([Verify users and submissions])
+    UC5([Approve or reject])
+    UC6([Auto-match donation and request])
+    UC7([Assign volunteer])
+    UC8([Update pickup and delivery])
+    UC9([Confirm delivery and rating])
+    UC10([Receive notifications])
+  end
+
+  Donor --> UC1
+  Donor --> UC2
+  Donor --> UC10
+  Recipient --> UC1
+  Recipient --> UC3
+  Recipient --> UC9
+  Recipient --> UC10
+  Admin --> UC1
+  Admin --> UC4
+  Admin --> UC5
+  Admin --> UC6
+  Admin --> UC7
+  Volunteer --> UC1
+  Volunteer --> UC8
+  Volunteer --> UC10
+

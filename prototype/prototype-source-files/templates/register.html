@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-layout"><div class="auth-info"><p class="tag dark">Network registration</p><h1>Create donor, NGO/orphanage, or volunteer account</h1><p>Admin verification supports the trust model required for safe food redistribution.</p></div><div class="form-card"><h2>Register</h2><form method="POST">
+<label>Name / Organization</label><input type="text" name="name" required>
+<label>Email</label><input type="email" name="email" required>
+<label>Password</label><input type="password" name="password" required>
+<label>Role</label><select name="role" required><option value="donor">Donor</option><option value="recipient">NGO / Orphanage</option><option value="volunteer">Volunteer/Rider</option></select>
+<label>Type</label><input type="text" name="organization_type" placeholder="Restaurant / Wedding Hall / Orphanage / Bike Rider">
+<label>Area</label><input type="text" name="area" placeholder="Example: Dhaka" required>
+<label>Phone <small>(needed for SMS alerts; example: 017XXXXXXXX)</small></label><input type="text" name="phone" placeholder="017XXXXXXXX">
+<label>Capacity meals <small>(recipient/volunteer)</small></label><input type="number" name="capacity_meals" min="0" value="0">
+<button class="btn full" type="submit">Create Account</button></form></div></div>
+{% endblock %}

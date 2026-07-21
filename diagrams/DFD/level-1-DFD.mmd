@@ -1,0 +1,39 @@
+flowchart TB
+  Donor[Donor]
+  Recipient[Recipient / NGO]
+  Admin[Admin]
+  Volunteer[Volunteer]
+
+  P1([1.0 Manage Users and Access])
+  P2([2.0 Manage Donations])
+  P3([3.0 Manage Food Requests])
+  P4([4.0 Verify, Match and Assign])
+  P5([5.0 Track Delivery and Notify])
+
+  D1[(D1 Users)]
+  D2[(D2 Donations)]
+  D3[(D3 Food Requests)]
+  D4[(D4 Food Matches)]
+  D5[(D5 Notifications)]
+
+  Donor -->|Registration and login| P1
+  Recipient -->|Registration and login| P1
+  P1 <-->|User record and access status| D1
+  Donor -->|Donation details| P2
+  P2 <-->|Donation record and status| D2
+  Recipient -->|Request details| P3
+  P3 <-->|Request record and status| D3
+  Admin -->|Approval decisions and assignment| P4
+  P4 -->|Pending submissions and match data| Admin
+  D1 -->|Verified users| P4
+  P4 <-->|Review data and status| D2
+  P4 <-->|Review data and status| D3
+  P4 -->|Match and assignment record| D4
+  P4 -->|Delivery assignment| P5
+  P5 -->|Assignment| Volunteer
+  Volunteer -->|Pickup and delivery updates| P5
+  P5 <-->|Delivery record and status| D4
+  P5 -->|Notification record| D5
+  P5 -->|Status and notifications| Donor
+  P5 -->|Match and delivery status| Recipient
+

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000">
+  <defs>
+    <style>
+      .title{font:700 34px Arial,sans-serif;fill:#12372a}.label{font:600 19px Arial,sans-serif;fill:#16352b}.actor{font:700 20px Arial,sans-serif;fill:#102a21}.line{stroke:#315f50;stroke-width:3;fill:none}.usecase{fill:#f3fbf7;stroke:#328267;stroke-width:3}.system{fill:#fbfdfc;stroke:#164f3d;stroke-width:4}.actorline{stroke:#132b23;stroke-width:4;stroke-linecap:round}.subtitle{font:700 23px Arial,sans-serif;fill:#164f3d}
+    </style>
+  </defs>
+  <rect width="1500" height="1000" fill="#eef7f2"/>
+  <text x="750" y="52" text-anchor="middle" class="title">ChariSmart Use-Case Diagram</text>
+  <rect x="285" y="80" width="930" height="860" rx="24" class="system"/>
+  <text x="750" y="120" text-anchor="middle" class="subtitle">ChariSmart System</text>
+
+  <!-- Actors -->
+  <circle cx="120" cy="230" r="30" fill="none" class="actorline"/><path d="M120 260V355M70 300H170M120 355L75 425M120 355L165 425" class="actorline"/><text x="120" y="462" text-anchor="middle" class="actor">Donor</text>
+  <circle cx="120" cy="620" r="30" fill="none" class="actorline"/><path d="M120 650V745M70 690H170M120 745L75 815M120 745L165 815" class="actorline"/><text x="120" y="852" text-anchor="middle" class="actor">NGO / Orphanage</text>
+  <circle cx="1380" cy="230" r="30" fill="none" class="actorline"/><path d="M1380 260V355M1330 300H1430M1380 355L1335 425M1380 355L1425 425" class="actorline"/><text x="1380" y="462" text-anchor="middle" class="actor">Admin</text>
+  <circle cx="1380" cy="620" r="30" fill="none" class="actorline"/><path d="M1380 650V745M1330 690H1430M1380 745L1335 815M1380 745L1425 815" class="actorline"/><text x="1380" y="852" text-anchor="middle" class="actor">Volunteer / Rider</text>
+
+  <!-- Use cases -->
+  <ellipse cx="500" cy="185" rx="155" ry="48" class="usecase"/><text x="500" y="192" text-anchor="middle" class="label">Register and log in</text>
+  <ellipse cx="500" cy="325" rx="155" ry="48" class="usecase"/><text x="500" y="332" text-anchor="middle" class="label">Submit food donation</text>
+  <ellipse cx="500" cy="510" rx="155" ry="48" class="usecase"/><text x="500" y="517" text-anchor="middle" class="label">Submit food request</text>
+  <ellipse cx="500" cy="700" rx="155" ry="48" class="usecase"/><text x="500" y="695" text-anchor="middle" class="label">Confirm delivery</text><text x="500" y="720" text-anchor="middle" class="label">and rating</text>
+  <ellipse cx="750" cy="835" rx="165" ry="48" class="usecase"/><text x="750" y="842" text-anchor="middle" class="label">Receive notifications</text>
+
+  <ellipse cx="980" cy="205" rx="170" ry="48" class="usecase"/><text x="980" y="200" text-anchor="middle" class="label">Verify users and</text><text x="980" y="225" text-anchor="middle" class="label">submissions</text>
+  <ellipse cx="980" cy="350" rx="155" ry="48" class="usecase"/><text x="980" y="357" text-anchor="middle" class="label">Approve or reject</text>
+  <ellipse cx="980" cy="495" rx="170" ry="48" class="usecase"/><text x="980" y="490" text-anchor="middle" class="label">Auto-match donation</text><text x="980" y="515" text-anchor="middle" class="label">and request</text>
+  <ellipse cx="980" cy="640" rx="155" ry="48" class="usecase"/><text x="980" y="647" text-anchor="middle" class="label">Assign volunteer</text>
+  <ellipse cx="980" cy="785" rx="170" ry="48" class="usecase"/><text x="980" y="780" text-anchor="middle" class="label">Update pickup and</text><text x="980" y="805" text-anchor="middle" class="label">delivery</text>
+
+  <!-- Associations -->
+  <path d="M175 290L348 202M175 320L345 325M175 675L345 525M175 720L345 700M175 760L585 835" class="line"/>
+  <path d="M1325 285L1140 210M1325 315L1135 350M1325 345L1145 495M1325 375L1135 640M1325 675L1148 785M1325 735L915 835" class="line"/>
+</svg>
+

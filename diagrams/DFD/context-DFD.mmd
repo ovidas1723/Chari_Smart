@@ -1,0 +1,16 @@
+flowchart TB
+  Admin[Admin]
+  Donor[Donor: Restaurant / Wedding Hall / Household]
+  System([0.0 ChariSmart System])
+  Recipient[Recipient: NGO / Orphanage]
+  Volunteer[Volunteer / Rider]
+
+  Donor -->|Registration and donation details| System
+  System -->|Donation status and notifications| Donor
+  Recipient -->|Registration and food request| System
+  System -->|Match and delivery status| Recipient
+  Admin -->|Verification decisions and assignments| System
+  System -->|Pending submissions and operational data| Admin
+  Volunteer -->|Pickup and delivery updates| System
+  System -->|Delivery assignment| Volunteer
+

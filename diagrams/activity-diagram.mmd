@@ -1,0 +1,12 @@
+flowchart TD
+  Start([Start]) --> Donor[Donor submits surplus food]
+  Donor --> AdminVerify[Admin verifies safety and pickup window]
+  AdminVerify -->|Reject| Reject[Notify donor]
+  AdminVerify -->|Approve| Req[Approved NGO/orphanage request exists?]
+  Req -->|No| Wait[Keep donation approved until request arrives]
+  Req -->|Yes| Match[System scores and creates match]
+  Match --> Assign[Admin assigns volunteer]
+  Assign --> Pickup[Volunteer confirms pickup]
+  Pickup --> Deliver[Volunteer delivers food]
+  Deliver --> Confirm[Recipient confirms delivery/rating]
+  Confirm --> End([End])

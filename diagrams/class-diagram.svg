@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1100" viewBox="0 0 1700 1100">
+  <defs>
+    <style>
+      .title{font:700 34px Arial,sans-serif;fill:#17372d}.box{fill:#fff;stroke:#275f4d;stroke-width:3}.head{fill:#d9f0e7;stroke:#275f4d;stroke-width:3}.name{font:700 23px Arial,sans-serif;fill:#12372a}.field{font:17px Consolas,monospace;fill:#1e332c}.rel{stroke:#315f50;stroke-width:3;fill:none}.reltext{font:600 16px Arial,sans-serif;fill:#244b3e}.diamond{fill:#315f50}
+    </style>
+  </defs>
+  <rect width="1700" height="1100" fill="#f0f7f4"/>
+  <text x="850" y="48" text-anchor="middle" class="title">ChariSmart Class Diagram</text>
+
+  <!-- User -->
+  <rect x="50" y="95" width="430" height="390" rx="10" class="box"/><path d="M50 145H480" class="rel"/><rect x="50" y="95" width="430" height="50" rx="10" class="head"/><text x="265" y="128" text-anchor="middle" class="name">User</text>
+  <text x="75" y="177" class="field">+ id: Integer</text><text x="75" y="204" class="field">+ name: String</text><text x="75" y="231" class="field">+ email: String</text><text x="75" y="258" class="field">+ password_hash: String</text><text x="75" y="285" class="field">+ role: String</text><text x="75" y="312" class="field">+ area: String</text><text x="75" y="339" class="field">+ phone: String</text><text x="75" y="366" class="field">+ organization_type: String</text><text x="75" y="393" class="field">+ capacity_meals: Integer</text><text x="75" y="420" class="field">+ verified: Boolean</text><text x="75" y="447" class="field">+ is_blocked: Boolean</text><text x="75" y="474" class="field">+ created_at: DateTime</text>
+
+  <!-- Donation -->
+  <rect x="635" y="95" width="450" height="390" rx="10" class="box"/><rect x="635" y="95" width="450" height="50" rx="10" class="head"/><text x="860" y="128" text-anchor="middle" class="name">Donation</text>
+  <text x="660" y="177" class="field">+ id: Integer</text><text x="660" y="204" class="field">+ food_name: String</text><text x="660" y="231" class="field">+ donor_type: String</text><text x="660" y="258" class="field">+ quantity_meals: Integer</text><text x="660" y="285" class="field">+ area: String</text><text x="660" y="312" class="field">+ pickup_address: String</text><text x="660" y="339" class="field">+ pickup_window_start: DateTime</text><text x="660" y="366" class="field">+ pickup_window_end: DateTime</text><text x="660" y="393" class="field">+ expire_at: DateTime</text><text x="660" y="420" class="field">+ status: String</text><text x="660" y="447" class="field">+ donor_id: Integer</text><text x="660" y="474" class="field">+ created_at: DateTime</text>
+
+  <!-- FoodRequest -->
+  <rect x="1215" y="95" width="435" height="390" rx="10" class="box"/><rect x="1215" y="95" width="435" height="50" rx="10" class="head"/><text x="1432" y="128" text-anchor="middle" class="name">FoodRequest</text>
+  <text x="1240" y="177" class="field">+ id: Integer</text><text x="1240" y="204" class="field">+ beneficiary_group: String</text><text x="1240" y="231" class="field">+ requested_food_type: String</text><text x="1240" y="258" class="field">+ quantity_needed: Integer</text><text x="1240" y="285" class="field">+ area: String</text><text x="1240" y="312" class="field">+ delivery_address: String</text><text x="1240" y="339" class="field">+ needed_before: DateTime</text><text x="1240" y="366" class="field">+ priority: String</text><text x="1240" y="393" class="field">+ status: String</text><text x="1240" y="420" class="field">+ recipient_id: Integer</text><text x="1240" y="447" class="field">+ created_at: DateTime</text>
+
+  <!-- FoodMatch -->
+  <rect x="545" y="650" width="610" height="370" rx="10" class="box"/><rect x="545" y="650" width="610" height="50" rx="10" class="head"/><text x="850" y="683" text-anchor="middle" class="name">FoodMatch</text>
+  <text x="570" y="732" class="field">+ id: Integer</text><text x="570" y="759" class="field">+ donation_id: Integer</text><text x="570" y="786" class="field">+ request_id: Integer</text><text x="570" y="813" class="field">+ volunteer_id: Integer</text><text x="570" y="840" class="field">+ meals_allocated: Integer</text><text x="570" y="867" class="field">+ match_score: Integer</text><text x="570" y="894" class="field">+ status: String</text><text x="570" y="921" class="field">+ pickup_confirmed_at: DateTime</text><text x="570" y="948" class="field">+ delivered_at: DateTime</text><text x="570" y="975" class="field">+ recipient_rating: Integer</text><text x="570" y="1002" class="field">+ created_at: DateTime</text>
+
+  <!-- Notification -->
+  <rect x="50" y="665" width="390" height="250" rx="10" class="box"/><rect x="50" y="665" width="390" height="50" rx="10" class="head"/><text x="245" y="698" text-anchor="middle" class="name">Notification</text>
+  <text x="75" y="747" class="field">+ id: Integer</text><text x="75" y="774" class="field">+ receiver_email: String</text><text x="75" y="801" class="field">+ title: String</text><text x="75" y="828" class="field">+ message: Text</text><text x="75" y="855" class="field">+ created_at: DateTime</text>
+
+  <!-- Relationships -->
+  <path d="M480 245H635" class="rel"/><text x="490" y="235" class="reltext">1</text><text x="595" y="235" class="reltext">0..*</text><text x="532" y="275" class="reltext">posts</text>
+  <path d="M480 365H560V555H1432V485" class="rel"/><text x="490" y="355" class="reltext">1</text><text x="1400" y="510" class="reltext">0..*</text><text x="920" y="545" class="reltext">submits</text>
+  <path d="M860 485V650" class="rel"/><text x="870" y="510" class="reltext">1</text><text x="870" y="640" class="reltext">0..*</text><text x="885" y="575" class="reltext">included in</text>
+  <path d="M1432 485V590H1070V650" class="rel"/><text x="1442" y="510" class="reltext">1</text><text x="1080" y="640" class="reltext">0..*</text><text x="1210" y="580" class="reltext">fulfilled by</text>
+  <path d="M350 485V600H650V650" class="rel"/><text x="360" y="510" class="reltext">0..1</text><text x="610" y="640" class="reltext">0..*</text><text x="400" y="590" class="reltext">assigned volunteer</text>
+  <path d="M245 485V665" class="rel" stroke-dasharray="10 7"/><text x="255" y="575" class="reltext">receives by email</text>
+</svg>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title or "ChariSmart" }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<nav class="navbar">
+    <div class="brand"><a href="{{ url_for('home') }}"><span>Chari</span>Smart</a></div>
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        {% if auth_user %}
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            {% if auth_user.role == 'donor' %}<a href="{{ url_for('donate') }}">Donate</a>{% endif %}
+            {% if auth_user.role == 'recipient' %}<a href="{{ url_for('request_food') }}">Request Food</a>{% endif %}
+            {% if auth_user.role == 'admin' %}<a href="{{ url_for('manage_users') }}">Manage Users</a>{% endif %}
+            <a href="{{ url_for('requests_list') }}">Requests</a>
+            <a class="logout" href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a class="btn-small" href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+    </div>
+</nav>
+<main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}<div class="flash-area">{% for category, message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</main>
+<footer><p>© 2026 ChariSmart | CSE-3208 System Analysis & Design Lab</p></footer>
+</body>
+</html>
